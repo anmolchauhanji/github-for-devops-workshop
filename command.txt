@@ -1,0 +1,103 @@
+PS C:\Users\anmol\git> hello.py
+hello.py : The term 'hello.py' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify 
+that the path is correct and try again.
+At line:1 char:1
++ hello.py
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (hello.py:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+
+Suggestion [3,General]: The command hello.py was not found, but does exist in the current location. Windows PowerShell does not load commands from the current location by default. If you trust this command, instead type: ".\hello.py". See "get-help about_Command_Precedence" for more details.
+PS C:\Users\anmol\git> rm hello.py
+PS C:\Users\anmol\git> git init
+Initialized empty Git repository in C:/Users/anmol/git/.git/
+PS C:\Users\anmol\git> git ls -a
+git: 'ls' is not a git command. See 'git --help'.
+
+The most similar command is
+        lfs
+PS C:\Users\anmol\git> git oneline -a
+git: 'oneline' is not a git command. See 'git --help'.
+PS C:\Users\anmol\git> git -a
+unknown option: -a
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]
+           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]
+           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+PS C:\Users\anmol\git> ls -a
+Get-ChildItem : Parameter cannot be processed because the parameter name 'a' is ambiguous. Possible matches include: -Attributes -Directory -File -Hidden -ReadOnly -System.
+At line:1 char:4
++ ls -a
++    ~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], ParameterBindingException
+    + FullyQualifiedErrorId : AmbiguousParameter,Microsoft.PowerShell.Commands.GetChildItemCommand
+
+PS C:\Users\anmol\git> dir  
+PS C:\Users\anmol\git> dir -a
+Get-ChildItem : Parameter cannot be processed because the parameter name 'a' is ambiguous. Possible matches include: -Attributes -Directory -File -Hidden -ReadOnly -System.
+At line:1 char:5
++ dir -a
++     ~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], ParameterBindingException
+    + FullyQualifiedErrorId : AmbiguousParameter,Microsoft.PowerShell.Commands.GetChildItemCommand
+
+PS C:\Users\anmol\git> git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+PS C:\Users\anmol\git> git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        testing.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\anmol\git> git add .
+PS C:\Users\anmol\git> git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   testing.py
+
+PS C:\Users\anmol\git> git commit -m "tracked"
+[master (root-commit) edcf26c] tracked
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 testing.py
+PS C:\Users\anmol\git> git rm testing.py
+rm 'testing.py'
+PS C:\Users\anmol\git> git restore testing.py
+error: pathspec 'testing.py' did not match any file(s) known to git
+PS C:\Users\anmol\git>  git restore testing.py
+error: pathspec 'testing.py' did not match any file(s) known to git
+PS C:\Users\anmol\git> history
+
+  Id CommandLine
+  -- -----------
+   1 try { . "c:\Users\anmol\AppData\Local\Programs\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\browser\media\shellIntegration.ps1" } catch {}
+   2 hello.py
+   3 rm hello.py
+   4 git init
+   5 git ls -a
+   6 git oneline -a
+   7 git -a
+   8 ls -a
+   9 dir
+  10 dir -a
+  11 git status
+  12 git status
+  13 git add .
+  14 git status
+  15 git commit -m "tracked"
+  16 git rm testing.py
+  17 git restore testing.py
